@@ -69,13 +69,15 @@ export class Request {
     );
     const response = await this.faultTolerantRequest(options);
     process.nextTick(() => this.end$.next());
-    if (response.body.status === 'ok') {
+
+    if (response.statusCode === 200) {
       return response;
     }
     const error = this.handleResponseError(response);
     process.nextTick(() => this.error$.next(error));
     throw error;
   }
+
   public signature(data: string) {
     return createHmac('sha256', this.client.state.signatureKey)
       .update(data)

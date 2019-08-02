@@ -228,6 +228,17 @@ export class MediaRepository extends Repository {
   }
 
   /**
+   * 
+   * @param shortCode Gets the media payload from a media shortcode
+   */
+  public async mediaFromShortcode(shortCode) {
+    const { body } = await this.client.request.send({
+      url: `/p/${shortCode}/?__a=1`,
+    });
+    return body;
+  }
+
+  /**
    * Configures an upload (indicated by {upload_id} in the options) for the timeline
    * @param options - configuration-options
    */
