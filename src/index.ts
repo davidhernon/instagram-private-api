@@ -1,5 +1,3 @@
-import 'reflect-metadata';
-
 export * from './core/client';
 export * from './core/entity';
 export * from './core/feed';

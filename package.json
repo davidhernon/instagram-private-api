@@ -46,7 +46,6 @@
     "json-bigint": "^0.3.0",
     "lodash": "^4.17.5",
     "luxon": "^1.12.1",
-    "reflect-metadata": "^0.1.13",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "rxjs": "^6.5.2",
